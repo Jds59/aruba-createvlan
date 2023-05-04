@@ -3,22 +3,8 @@
   collections:
     - arubanetworks.aoscx
   vars:
-    ansible_python_interpreter: /usr/bin/python3 
     ansible_connection: network_cli
-    vlan_id: 10 # change this to the desired VLAN ID
-    vlan_name: test # change this to the desired VLAN name
   tasks:
-    - name: Create VLAN on the switch
-      aoscx_vlan:
-        vlan_id: "{{ vlan_id }}"
-        name: "{{ vlan_name }}"
-        state: create
-
-    - name: Execute show vlan on the switch and register
+    - name: Create VLAN 10 with name test using CLI command
       aoscx_command:
-        commands: ['show vlan']
-      register: show_vlan_output
-
-    - name: Output registered variable
-      debug:
-        var: show_vlan_output
+        commands: ['vlan 10 name test']
