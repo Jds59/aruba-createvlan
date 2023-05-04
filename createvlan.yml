@@ -10,6 +10,6 @@
         commands: ['vlan 10 name test']
       register: create_vlan_output
 
-- name: Output registered variable
+    - name: Output registered variable
       debug:
         var: create_vlan_output
