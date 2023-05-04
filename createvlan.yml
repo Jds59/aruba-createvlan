@@ -1,8 +1,0 @@
-- hosts: all
-  roles:
-    - role: arubanetworks.aoscx_role
-  tasks:
-    - name: Create Vlan 300
-      aoscx_vlan:
-        vlan_id: "300"
-        description: "with ansible" 
