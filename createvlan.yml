@@ -3,6 +3,7 @@
   collections:
     - arubanetworks.aoscx
   vars:
+    ansible_python_interpreter: /usr/bin/python3 
     ansible_connection: network_cli
     vlan_id: 10 # change this to the desired VLAN ID
     vlan_name: test # change this to the desired VLAN name
