@@ -5,11 +5,12 @@
   vars:
     ansible_connection: network_cli
   tasks:
-    - name: Create VLAN 10 with name test using CLI command
-      aoscx_command:
-        commands: ['vlan 10 name test']
+    - name: Create VLAN 10 with name test using config command
+      aoscx_config:
+        lines: 
+          - vlan 10 name test
       register: create_vlan_output
-
+      
     - name: Output registered variable
       debug:
         var: create_vlan_output
