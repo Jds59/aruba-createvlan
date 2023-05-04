@@ -1,0 +1,8 @@
+- hosts: all
+  collections:
+    - arubanetworks.aoscx
+  tasks:
+    - name: Create Vlan 1000
+      aoscx_vlan:
+        vlan_id: "1000"
+        description: "with ansible" 
